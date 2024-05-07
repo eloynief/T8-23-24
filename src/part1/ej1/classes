@@ -5,7 +5,9 @@ Utils
 	readDouble(Scanner sc): double
 		valor=0;
 		
-		try catch InputMismatchException
+		try introduce valor
+		
+		catch InputMismatchException
 		syso "el valor no es de ese tipo"
 		
 		return valor
@@ -13,7 +15,8 @@ Utils
 	readInt(Scanner sc): int
 		valor=0;
 		
-		try catch InputMismatchException
+		try introduce valor
+		catch InputMismatchException
 		syso "el valor no es de ese tipo"
 		
 		return valor
