@@ -1,5 +1,6 @@
 package part2.ej1;
 
+import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -12,30 +13,57 @@ public class Main {
 		//arraylist de ints
 		List<Integer> listaNumeros=new ArrayList<Integer>();
 
-		FileReader fr = null;
+		BufferedReader br = null;
 		int num=0;
-		
+		int numParse = 0;
 		int numLista=0;
-		
+		String linea="";
 		try {
-			fr= new FileReader("src\\part2\\NumerosReales");
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		do {
+			br = new BufferedReader(new FileReader("src/part2/ej1/NumerosReales"));
 			
+			//leemos
 			try {
-				num=fr.read();
+				linea=br.readLine();
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			
-			System.out.println(num);
+			while(linea!=null) {
+				
+				
+				numParse+=Integer.parseInt(linea);
+				
+				
+				listaNumeros.add(numParse);
+				
+				try {
+					linea=br.readLine();
+					
+					
+					
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
+			}
 			
-		}while(num!=-1);
+		} catch (FileNotFoundException e) {
+			System.out.println("El archivo no se ha encontrado");
+			System.out.println(e);
+		}
+		
+		
+		
+		System.out.println(listaNumeros);
+		
+
+        // Mostrar los números en la lista
+        for (int numero : listaNumeros) {
+            System.out.println(numero);
+        }
+		
 		
 	}
 
