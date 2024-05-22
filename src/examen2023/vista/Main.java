@@ -46,7 +46,7 @@ public class Main {
 				medicamento=escribeMedicamento();
 				
                 if(CRUDMedicamentos.add(medicamento)) {
-					System.out.println("El medicamento se ha add de la existencia");
+					System.out.println("El medicamento se ha add");
 				}
 				else {
 					System.out.println("NO SE HA PODIDO add");
