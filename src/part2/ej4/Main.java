@@ -19,7 +19,7 @@ public class Main {
 
 		
 		try {
-			bw=new BufferedWriter(new FileWriter("src/part2/ej4/Texto"));
+			bw=new BufferedWriter(new FileWriter("src/part2/ej4/Texto.txt"));
 			
 			//mientras la cadena no sea fin
 			while(!texto.equalsIgnoreCase("fin")) {

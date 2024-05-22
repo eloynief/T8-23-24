@@ -1,0 +1,75 @@
+Medicamento
+
+	-codigo: int
+	-nombre: String
+	-desc: String
+	-precio: double
+	-posologia: String
+	
+	
+	getters setters de todo excepto un set del codigo
+	
+	+getCodigo: int
+	+getNombre: String
+	+getDesc: String
+	+getPrecio: double
+	+getPosologia: String
+	
+	+getCodigo(codigo): void
+	+getPrecio(precio): void
+	+getPosologia(posologia): void
+	
+	public Medicamento()
+	
+	public Medicamento(codigo)
+	
+	public Medicamento(codigo,nombre,desc)
+	
+	public Medicamento(codigo,nombre,desc,precio,posologia)
+	
+	+toString: String
+	
+	
+	
+_________________________________________________
+	
+	
+	
+Ficheros
+	
+	public static final String NOMBRE_FICHERO
+	
+	+ static leeFichero():treeSet
+	
+	+ static escribeFichero(treeSet coleccionMedicamentos):void
+	
+_________________________________________________
+	
+
+GestionMedicamentos (CRUD):
+	
+	public static TreeSet coleccionMedicamentos;
+	
+	+ static listarMedicamento(): void
+	
+	+ static addMedicamento(): boolean
+	
+	+ static modifyMedicamento(): boolean
+	
+	+ static deleteMedicamento(): boolean
+	
+	+ static saveMedicamento(): boolean
+	
+_________________________________________________
+	
+Main:
+	
+	main
+	
+	
+	
+	
+	
+	
+	
+	
