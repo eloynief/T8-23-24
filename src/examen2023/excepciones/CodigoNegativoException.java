@@ -11,5 +11,15 @@ public class CodigoNegativoException extends Exception{
 		
 		return str;
 	}
+
+	@Override
+	public String getMessage() {
+
+		String str="";
+		
+		str+=super.getMessage()+"El valor introducido no puede ser negativo";
+		
+		return str;
+	}
 	
 }

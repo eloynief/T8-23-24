@@ -10,7 +10,7 @@ import examen2023.excepciones.ValorNegativoException;
  */
 public class Medicamento implements Comparable<Medicamento>{
 		
-		
+		//atributos
 	  	private int codigo;
 	  	private String nombre;
 	    private String desc;
@@ -114,17 +114,18 @@ public class Medicamento implements Comparable<Medicamento>{
 	    }
 
 	    
+	    //metodos override
 	    
 	    @Override
 	    public String toString() {
 	    	
 	    	String str="";
 	    	
-	    	str+="codigo:" + codigo+"\n";
-	    	str+="nombre:" + nombre+"\n";
-	    	str+="desc:" + desc+"\n";
-	    	str+="precio:" + precio+"\n";
-	    	str+="posologia:" + posologia+"\n";
+	    	str+="codigo: " + codigo+"\n";
+	    	str+="nombre: " + nombre+"\n";
+	    	str+="desc: " + desc+"\n";
+	    	str+="precio: " + precio+"\n";
+	    	str+="posologia: " + posologia+"\n";
 	        return str;
 	    }
 
