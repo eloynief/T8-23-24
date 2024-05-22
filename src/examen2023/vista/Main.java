@@ -11,11 +11,11 @@ public class Main {
 
 	private static Scanner sc= new Scanner(System.in);
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws ValorInvalidoException {
 		// TODO Auto-generated method stub
 		
 
-		 Medicamento medicamento;
+		 Medicamento medicamento = null;
 		 
 
 		 //variables que recogen los valores
@@ -43,32 +43,15 @@ public class Main {
 			case 1:{
 
 				
-				System.out.println("Escribe el codigo: ");
-				codigo=sc.nextInt();
-				sc.nextLine();
+				medicamento=escribeMedicamento();
 				
-				System.out.println("Escribe el nombre: ");
-				nombre=sc.nextLine();
-				
-				System.out.println("Escribe el desc: ");
-				desc=sc.nextLine();
-
-				System.out.println("Escribe el precio: ");
-				precio=sc.nextDouble();
-				sc.nextLine();
-				
-				System.out.println("Escribe el posologia: ");
-				posologia=sc.nextLine();
-				
-				try {
-					medicamento=new Medicamento(codigo, nombre, desc, precio, posologia);
-					
-					CRUDMedicamentos.add(medicamento);
-					
-				} catch (ValorInvalidoException e) {
-					System.err.println(e);
+                if(CRUDMedicamentos.add(medicamento)) {
+					System.out.println("El medicamento se ha add de la existencia");
 				}
-				
+				else {
+					System.out.println("NO SE HA PODIDO add");
+				}
+                
 				break;
 			}
 			case 2:{
@@ -78,13 +61,34 @@ public class Main {
 				break;
 			}
 			case 3:{
-				
-				
 
+				medicamento=escribeMedicamento();
+				
+                if(CRUDMedicamentos.modifyMedicamento(medicamento)) {
+					System.out.println("El medicamento se ha modificado de la existencia");
+				}
+				else {
+					System.out.println("NO SE HA PODIDO modificado");
+				}
+				
 				break;
 			}
 			case 4:{
 				
+
+//				medicamento=escMed();
+
+				System.out.println("Escribe el nombre: ");
+				nombre=sc.nextLine();
+				sc.nextLine();
+				
+				if(CRUDMedicamentos.delete(nombre)) {
+					System.out.println("El medicamento se ha borrado de la existencia");
+				}
+				else {
+					System.out.println("NO SE HA PODIDO BORRAR");
+				}
+                
 				
 
 				break;
@@ -131,58 +135,55 @@ public class Main {
 	
 	
 	
+
 	//funciones de escritura
+	
+	/**
+	 * funcion para escribir un medicamento para ponerlo al constructor con todos los params
+	 * @return
+	 */
+	public static Medicamento escribeMedicamento() {
 
-	public static int escribeCodigo() {
+		 Medicamento medicamento = null;
+		 
 
-		int num=0;
+		 //variables que recogen los valores
+		 int codigo=0;
+		 String nombre="";
+		 String desc="";
+		 double precio=0;
+		 String posologia="";
+		 
 		
 		System.out.println("Escribe el codigo: ");
-		num=sc.nextInt();
-		
-		return num;
-	}
-	
-	public static String escribeNombre() {
-
-		String str="";
+		codigo=sc.nextInt();
+		sc.nextLine();
 		
 		System.out.println("Escribe el nombre: ");
-		str=sc.nextLine();
+		nombre=sc.nextLine();
+		
+		System.out.println("Escribe el desc: ");
+		desc=sc.nextLine();
+
+		System.out.println("Escribe el precio: ");
+		precio=sc.nextDouble();
 		sc.nextLine();
-		return str;
+		
+		System.out.println("Escribe el posologia: ");
+		posologia=sc.nextLine();
+
+		try {
+			medicamento=new Medicamento(codigo, nombre, desc, precio, posologia);
+		} catch (ValorInvalidoException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return medicamento;
 	}
 	
-	public static String escribeDesc() {
-
-		String str="";
-		
-		System.out.println("Escribe la descripcion: ");
-		str=sc.nextLine();
-		sc.nextLine();
-		
-		return str;
-	}
-
-	public static double escribePrecio() {
-
-		double num=0;
-		
-		System.out.println("Escribe el codigo: ");
-		num=sc.nextDouble();
-		
-		return num;
-	}
 	
-	public static String escribePosologia() {
 
-		String str="";
-		
-		System.out.println("Escribe la posologia: ");
-		str=sc.nextLine();
-		sc.nextLine();
-		return str;
-	}
 	
 	
 	
