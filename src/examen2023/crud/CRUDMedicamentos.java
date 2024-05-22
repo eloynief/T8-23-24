@@ -1,4 +1,4 @@
-package crud;
+package examen2023.crud;
 
 import examen2023.Medicamento;
 
