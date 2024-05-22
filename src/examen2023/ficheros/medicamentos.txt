@@ -1,3 +1,2 @@
-1234;qwertyug; ;123456;uoiguff;
-123456;qwertyujh;tyrivu yir;1234567.95;vtoutoy tuo;
-1234;aleator; ;123456;uoiguff;
+1;medicina;noteva;1234.0;pozo;
+2;media;notecura;5000.0;pozologista;
